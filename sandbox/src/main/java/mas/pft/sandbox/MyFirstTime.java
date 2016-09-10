@@ -1,3 +1,5 @@
+package mas.pft.sandbox;
+
 public class MyFirstTime {
 
   public static void main (String[] args){
