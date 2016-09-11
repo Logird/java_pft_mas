@@ -5,16 +5,20 @@ public class MyFirstTime {
   public static void main (String[] args){
     System.out.println("Вычисление расстояния между двумя точками в прямоугольной системе координат");
     //первая точка
-    Point p1 = new Point();
-    p1.x = 2.4;
-    p1.y = 8;
+    Point A = new Point();
+    A.x = 2.4;
+    A.y = 8;
+    System.out.println("Координаты точки А: " + "(" + A.x + ", " + A.y + ").");
     //вторая точка
-    Point p2 = new Point();
-    p2.x = -8;
-    p2.y = -16;
-
-    double len = Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2));
-    System.out.println("Расстояние между точками равно " + len);
+    Point B = new Point();
+    B.x = -8;
+    B.y = -16;
+    System.out.println("Координаты точки Б: " + "(" + B.x + ", " + B.y + ").");
+    System.out.println();
+    
+    System.out.println("Расстояние между точками равно " + distance (A, B));
   }
-  
+  public static double distance (Point p1, Point p2){
+    return Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y),2));
+  }
 }
