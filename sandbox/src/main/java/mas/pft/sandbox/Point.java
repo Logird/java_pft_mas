@@ -14,4 +14,8 @@ public class Point {
   public double distance (Point a, Point b){
     return Math.sqrt(Math.pow((b.x - a.x), 2) + Math.pow((b.y - a.y),2));
   }
+  public Point symmetric (Point a){
+    Point b = new Point (-a.x, -a.y);
+    return b;
+  }
 }
