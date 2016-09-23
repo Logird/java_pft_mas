@@ -7,18 +7,22 @@ import ru.mas.pft.addressbook.model.ContactData;
 /**
  * Created by Alexander on 22.09.2016.
  */
-public class ContactHelper {
-
-  private FirefoxDriver wd;
+public class ContactHelper extends HelperBase{
 
   public ContactHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
   public void submitContactForm() {
-    wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+    click(By.xpath("//div[@id='content']/form/input[21]"));
+    //wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
   public void fillContactForm(ContactData contactData) {
+    type(By.name("firstname"), contactData.getFirstname());
+    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("home"), contactData.getHome());
+    type(By.name("email"), contactData.getEmail());
+    /*
     wd.findElement(By.name("firstname")).click();
     wd.findElement(By.name("firstname")).clear();
     wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
@@ -31,6 +35,7 @@ public class ContactHelper {
     wd.findElement(By.name("email")).click();
     wd.findElement(By.name("email")).clear();
     wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
+    */
   }
 
 }
