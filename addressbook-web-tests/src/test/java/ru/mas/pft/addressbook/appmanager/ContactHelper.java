@@ -14,7 +14,6 @@ public class ContactHelper extends HelperBase{
   }
   public void submitContactForm() {
     click(By.xpath("//div[@id='content']/form/input[21]"));
-    //wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
   public void fillContactForm(ContactData contactData) {
@@ -22,24 +21,10 @@ public class ContactHelper extends HelperBase{
     type(By.name("lastname"), contactData.getLastname());
     type(By.name("home"), contactData.getHome());
     type(By.name("email"), contactData.getEmail());
-    /*
-    wd.findElement(By.name("firstname")).click();
-    wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
-    wd.findElement(By.name("lastname")).click();
-    wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
-    wd.findElement(By.name("home")).click();
-    wd.findElement(By.name("home")).clear();
-    wd.findElement(By.name("home")).sendKeys(contactData.getHome());
-    wd.findElement(By.name("email")).click();
-    wd.findElement(By.name("email")).clear();
-    wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
-    */
   }
 
   public void initContactModification() {
-    click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+    click(By.cssSelector("img[alt=\'Edit\']"));
   }
 
   public void updateContactForm() {
@@ -51,6 +36,11 @@ public class ContactHelper extends HelperBase{
   }
 
   public void initContactDeletion() {
-    click(By.xpath("//div[@id='content']/form[2]/input[2]"));
+    click(By.xpath("//input[@value='Delete']"));
+    alertAccept();
+  }
+
+  public void selectContacts() {
+    click(By.name("selected[]"));
   }
 }

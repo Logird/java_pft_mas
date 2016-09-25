@@ -26,4 +26,8 @@ public class HelperBase {
   protected boolean isSelected(By locator) {
     return wd.findElement(locator).isSelected();
   }
+
+  protected void alertAccept() {
+    wd.switchTo().alert().accept();
+  }
 }
