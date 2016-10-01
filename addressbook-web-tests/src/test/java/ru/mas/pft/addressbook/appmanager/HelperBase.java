@@ -1,15 +1,16 @@
 package ru.mas.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by TO on 23.09.2016.
  */
 public class HelperBase {
-  protected FirefoxDriver wd;
+  protected WebDriver wd;
 
-  public HelperBase(FirefoxDriver wd) {
+  public HelperBase(WebDriver wd) {
     this.wd = wd;
   }
 
